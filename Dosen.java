@@ -1,6 +1,0 @@
-/**
- * Dosen
- */
-public class Dosen {
-
-}
