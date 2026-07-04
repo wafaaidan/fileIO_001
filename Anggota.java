@@ -42,3 +42,9 @@ class Dosen extends Anggota {
         super(nama, id, "D");
     }
 }
+
+class Staff extends Anggota{
+    public Staff(String nama, String id) {
+        super(nama, id, "S");
+    }
+}
