@@ -1,5 +1,0 @@
-Dio | M001 | M
-Yogi | M002 | M
-Shouta | D201 | D
-Benny | D202 | D
-Johnny | D203 | D
