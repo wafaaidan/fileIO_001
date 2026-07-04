@@ -1,0 +1,6 @@
+/**
+ * Dosen
+ */
+public class Dosen {
+
+}
