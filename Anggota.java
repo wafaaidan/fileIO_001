@@ -30,7 +30,7 @@ abstract class Anggota { //abstract class anggota
         return jumlahPinjam;
     } 
 }
-//inheritance dari abstract class
+//inheritance class Mahasiswa dan Dosen dari abstract class
 class Mahasiswa extends Anggota { 
     public Mahasiswa(String nama, String id) {
         super(nama, id, "M");
