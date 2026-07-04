@@ -16,7 +16,7 @@ public class Registry {
         List<Anggota> daftarMahasiswa = new ArrayList<>();
         List<Anggota> daftarDosen = new ArrayList<>();
         List<Anggota> daftarStaff = new ArrayList<>();
-
+        //supaya data tersimpan di file sesuai kodeJenis
         for (Anggota s : hasil) {
             if (s.getKodeJenis().equals("M")) {
                 daftarMahasiswa.add(s);
@@ -25,7 +25,7 @@ public class Registry {
             } else if (s.getKodeJenis().equals("S")) {
                 daftarStaff.add(s);
             }
-        }
+        } //lokasi file
         AnggotaFileIO.simpanAnggota(daftarMahasiswa, "data_mahasiswa.txt");
         AnggotaFileIO.simpanAnggota(daftarDosen, "data_dosen.txt");
         AnggotaFileIO.simpanAnggota(daftarStaff, "data_staff.txt");
