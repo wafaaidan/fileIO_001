@@ -1,14 +1,17 @@
-abstract class Anggota { //abstract class anggota
-    private String nama;
-    private String id;
+public abstract class Anggota implements Peminjam{ //abstract class anggota
+    //encapsulation
+    protected String nama;
+    protected String id;
     private String kodeJenis;
-    private int jumlahPinjam = 0; //deklarasi variable
+    private int jumlahPinjam = 0; 
+
     //constructor untuk variable 
-    public Anggota(String nama, String id, String kodeJenis) {
+    public Anggota(String id, String nama, String kodeJenis) {
         this.nama = nama;
         this.id = id;
         this.kodeJenis = kodeJenis;
     } 
+    
     //membuat getter dan setter
     public String getNama() {
         return nama;
@@ -29,22 +32,27 @@ abstract class Anggota { //abstract class anggota
     public int getJumlahPinjam() {
         return jumlahPinjam;
     } 
-}
-//inheritance class Mahasiswa dan Dosen dari abstract class
-class Mahasiswa extends Anggota { 
-    public Mahasiswa(String nama, String id) {
-        super(nama, id, "M");
-    }
-}
+    public abstract void tampilkanInfo();
 
-class Dosen extends Anggota { 
-    public Dosen(String nama, String id) {
-        super(nama, id, "D");
-    }
-}
+    public abstract int getMaksHariPinjam();
 
-class Staff extends Anggota{
-    public Staff(String nama, String id) {
-        super(nama, id, "S");
+    public abstract double getTarifDendaPerHari();
+
+    @Override
+    public void pinjamBuku(Buku buku) {
+        System.out.println(nama + " meminjam buku: " + buku.getJudul());
+    }
+    @Override
+    public double hitungDenda(int hariTerlambat) {
+        if (hariTerlambat <= 0) {
+            return 0; // tidak telat, denda = Rp0
+        }
+        return hariTerlambat * getTarifDendaPerHari();
+    }
+    public abstract String toFileString();
+
+    @Override
+    public String toString() {
+        return "[" + id + "] " + nama;
     }
 }
